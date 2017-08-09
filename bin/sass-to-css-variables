@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+var path = require('path');
+var sassToCssVars = require('../');
+
+var opts = process.argv.slice(2) || null;
+var src = opts[0] || null;
+var dest = opts[1] || null;
+
+if(src && dest) {
+    return sassToCssVars.convert(src, dest);
+} else {
+    if(!src) {
+        throw Error('Unable to find source file');
+    }
+    if(!dest) {
+        throw Error('Unable to find output file');
+    }
+}
