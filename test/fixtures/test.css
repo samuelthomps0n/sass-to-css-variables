@@ -1,0 +1,14 @@
+.test {
+    text-align: left;
+    color: $white;
+}
+
+.test {
+    text-align: left;
+    color: $blue-multi;
+}
+
+.test {
+    text-align: left;
+    border: 1px $blue solid;
+}

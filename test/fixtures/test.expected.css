@@ -1,0 +1,14 @@
+.test {
+	text-align: left;
+	color: var(--white);
+}
+
+.test {
+	text-align: left;
+	color: var(--blue-multi);
+}
+
+.test {
+	text-align: left;
+	border: 1px var(--blue) solid;
+}
