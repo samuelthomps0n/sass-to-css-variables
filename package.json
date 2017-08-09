@@ -1,6 +1,6 @@
 {
   "name": "sass-to-css-variables",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Convert stylesheets from $ variables to use CSS variables",
   "main": "index.js",
   "scripts": {
