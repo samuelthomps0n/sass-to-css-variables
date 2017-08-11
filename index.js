@@ -21,12 +21,9 @@ module.exports = {
 
                 currentLineWords.forEach(function(value, index) {
 
-                    if(value.startsWith('$')) {
-                        value = 'var(--' + value.replace('$', '') + ')';
-                        if(value.includes(';')) {
-                            value = value.replace(';', '');
-                            value = value + ';';
-                        }
+                    if(value.includes('$')) {
+                        let oldVariable = value.substring(value.indexOf('$')).replace(/;|,| |\)/g, '');
+                        value = value.replace(oldVariable, 'var(--' + oldVariable.replace('$', '') + ')');
                     }
 
                     if(index > 0) {

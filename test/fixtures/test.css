@@ -12,3 +12,11 @@
     text-align: left;
     border: 1px $blue solid;
 }
+
+.test {
+    background: color($color, lighten 10%);
+}
+
+.test {
+    background-image: svg-load('chevron-left.svg', fill=$color);
+}
