@@ -1,4 +1,3 @@
-const Q          = require('q');
 const path       = require('path');
 const fs         = require('fs');
 const lineReader = require('readline');
@@ -7,7 +6,8 @@ const glob       = require('glob');
 module.exports = {
 
     convert: function(src, dest) {
-        let deferred = Q.defer();
+
+        return new Promise((resolve, reject) => {
 
             let sourceCssStream = lineReader.createInterface({
                 input: fs.createReadStream(src)
@@ -47,7 +47,7 @@ module.exports = {
                         outputFile.end();
                     });
                     outputFile.on('close', function() {
-                        deferred.resolve(dest);
+                        resolve(dest)
                     });
                 } else {
                     let outputFile = fs.createWriteStream(src);
@@ -57,12 +57,12 @@ module.exports = {
                         outputFile.end();
                     });
                     outputFile.on('close', function() {
-                        deferred.resolve(src);
+                        resolve(src);
                     });
                 }
             });
 
+        });
 
-        return deferred.promise;
     }
 }

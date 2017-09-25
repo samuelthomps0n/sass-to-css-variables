@@ -16,7 +16,6 @@ let jsTest = function (fixture, options, done) {
     plugin.convert(source, destination).then(function(file) {
 
         let result = fs.readFileSync(destination, 'utf8')
-
         result.should.eql(expectedOutput);
         done();
     }).catch(function(err) {
